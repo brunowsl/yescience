@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 @AllArgsConstructor
 @RequestMapping("/posts")
@@ -18,6 +19,7 @@ public class PostsController {
 
     @GetMapping("/listar-todos")
     public ResponseEntity<?> listarTodos() {
+        System.out.println("listar-todos");
         var response = postRepository.findAll();
         return ResponseEntity.ok(response);
     }
